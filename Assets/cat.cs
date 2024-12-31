@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // 使用 LoadScene 必要的引用程式敘述 !!
 
 public class Cat : MonoBehaviour
 {
@@ -55,4 +56,11 @@ public class Cat : MonoBehaviour
             animator.speed = 1.0f;
         }
     }
+
+    // 抵達終點
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        SceneManager.LoadScene("ClearScene");
+    }
+
 }
